@@ -25,7 +25,7 @@ class QrcodeService
         $objDateTime = new \DateTime('NOW');
         $dateString = $objDateTime->format('d-m-Y H:i:s');
 
-        $path = dirname(__DIR__, 2).'/public/assets/';
+       $path = dirname(__DIR__, 2).'/public/assets/';
         //setQrCode
         $result =$this->builder->data($query)
             ->encoding(new Encoding('UTF-8'))
@@ -41,9 +41,9 @@ class QrcodeService
             ->backgroundColor(new Color(221, 158, 3))
             ->build();
         //generate name
-        $namePng = uniqid('', '') . '.png';
+     //   $namePng = uniqid('', '') . '.png';
         //Save image QrCode
-        $result->saveToFile(($path.'qr-code/'.$namePng));
+   //     $result->saveToFile(($path.'qr-code/'.$namePng));
         return $result->getDataUri();
 
     }
